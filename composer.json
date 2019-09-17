@@ -1,0 +1,21 @@
+{
+    "name": "navatech/omnipay-voguepay",
+    "description": "Omnipay for Voguepay",
+    "type": "library",
+    "keywords": ["omnipay","voguepay"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Le Phuong",
+            "email": "phuong17889@gmail.com"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "~2.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Omnipay\\Voguepay\\": "src/"
+        }
+    }
+}
