@@ -150,11 +150,11 @@ class PayUrlRequest extends AbstractRequest {
 	 */
 	public function sendData($data) {
 		try {
-			$response = $this->httpClient->request('GET', $this->getEndpoint(), [], http_build_query($data));
+			$response = $this->httpClient->request('GET', $this->getEndpoint() . http_build_query($data));
 		} catch (BadResponseException $e) {
 			$response = $e->getResponse();
 		}
-		$result = json_decode($response->getBody()->getContents(), true);
+		$result = ['pay_url' => $response->getBody()->getContents()];
 		return new PayUrlResponse($this, $result);
 	}
 }

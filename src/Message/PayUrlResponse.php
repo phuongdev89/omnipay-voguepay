@@ -20,7 +20,7 @@ class PayUrlResponse extends AbstractResponse {
 	 * @return boolean
 	 */
 	public function isSuccessful() {
-		return isset($this->data['error']) && $this->data['error'] == 'ok';
+		return isset($this->data['pay_url']) && $this->data['pay_url'] != '';
 	}
 
 	/**
@@ -39,5 +39,9 @@ class PayUrlResponse extends AbstractResponse {
 	 */
 	public function getData() {
 		return $this->data;
+	}
+
+	public function getPayUrl() {
+		return $this->data['pay_url'];
 	}
 }

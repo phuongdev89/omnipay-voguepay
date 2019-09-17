@@ -4,7 +4,11 @@ namespace Omnipay\Voguepay\Message;
 
 use Omnipay\Common\Exception\InvalidRequestException;
 use Omnipay\Common\Message\AbstractRequest as BaseAbstractRequest;
+use Omnipay\Common\Message\ResponseInterface;
 
+/**
+ * @method ResponseInterface send(array $options = [])
+ */
 abstract class AbstractRequest extends BaseAbstractRequest {
 
 	protected $endpoint = "https://voguepay.com/";
@@ -83,7 +87,7 @@ abstract class AbstractRequest extends BaseAbstractRequest {
 	 * @return string
 	 */
 	protected function getEndpoint() {
-		return $this->endpoint;
+		return $this->endpoint . '?';
 	}
 
 	/**

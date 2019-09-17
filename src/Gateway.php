@@ -6,6 +6,7 @@ use Omnipay\Common\AbstractGateway;
 use Omnipay\Common\Message\AbstractRequest;
 use Omnipay\Common\Message\RequestInterface;
 use Omnipay\Voguepay\Message\PayUrlRequest;
+use Omnipay\Voguepay\Message\TransactionRequest;
 
 /**
  * @method RequestInterface authorize(array $options = [])
@@ -117,7 +118,16 @@ class Gateway extends AbstractGateway {
 	 *
 	 * @return AbstractRequest|PayUrlRequest
 	 */
-	public function PayUrl($parameters = []) {
+	public function payUrl($parameters = []) {
 		return $this->createRequest(PayUrlRequest::class, $parameters);
+	}
+
+	/**
+	 * @param array $parameters
+	 *
+	 * @return AbstractRequest|TransactionRequest
+	 */
+	public function transaction($parameters = []) {
+		return $this->createRequest(TransactionRequest::class, $parameters);
 	}
 }

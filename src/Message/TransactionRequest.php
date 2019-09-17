@@ -68,7 +68,7 @@ class TransactionRequest extends AbstractRequest {
 	 */
 	public function sendData($data) {
 		try {
-			$response = $this->httpClient->request('GET', $this->getEndpoint(), [], http_build_query($data));
+			$response = $this->httpClient->request('GET', $this->getEndpoint() . http_build_query($data));
 		} catch (BadResponseException $e) {
 			$response = $e->getResponse();
 		}
