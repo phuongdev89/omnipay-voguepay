@@ -1,10 +1,9 @@
 <?php
 
-namespace Omnipay\Voguepay\Message;
+namespace Omnipay\Voguepay\Message\Gateway;
 
 use GuzzleHttp\Exception\BadResponseException;
 use Omnipay\Common\Exception\InvalidRequestException;
-use Omnipay\Common\Message\ResponseInterface;
 
 class TransactionRequest extends AbstractRequest {
 
@@ -34,7 +33,7 @@ class TransactionRequest extends AbstractRequest {
 	/**
 	 * @param $value
 	 *
-	 * @return AbstractRequest
+	 * @return TransactionRequest
 	 */
 	public function setType($value) {
 		return $this->setParameter('type', $value);
@@ -64,7 +63,7 @@ class TransactionRequest extends AbstractRequest {
 	 *
 	 * @param mixed $data The data to send
 	 *
-	 * @return ResponseInterface
+	 * @return TransactionResponse
 	 */
 	public function sendData($data) {
 		try {

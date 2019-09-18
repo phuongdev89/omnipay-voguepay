@@ -8,7 +8,7 @@
  * @time    4:24 PM
  */
 
-namespace Omnipay\Voguepay\Message;
+namespace Omnipay\Voguepay\Message\Gateway;
 
 use Omnipay\Common\Message\AbstractResponse;
 

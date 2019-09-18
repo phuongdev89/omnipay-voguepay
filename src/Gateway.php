@@ -5,8 +5,8 @@ namespace Omnipay\Voguepay;
 use Omnipay\Common\AbstractGateway;
 use Omnipay\Common\Message\AbstractRequest;
 use Omnipay\Common\Message\RequestInterface;
-use Omnipay\Voguepay\Message\PayUrlRequest;
-use Omnipay\Voguepay\Message\TransactionRequest;
+use Omnipay\Voguepay\Message\Gateway\PayUrlRequest;
+use Omnipay\Voguepay\Message\Gateway\TransactionRequest;
 
 /**
  * @method RequestInterface authorize(array $options = [])
@@ -22,11 +22,13 @@ use Omnipay\Voguepay\Message\TransactionRequest;
  */
 class Gateway extends AbstractGateway {
 
+	const NAME = 'Voguepay';
+
 	/**
 	 * {@inheritDoc}
 	 */
 	public function getName() {
-		return 'Voguepay';
+		return self::NAME;
 	}
 
 	/**
@@ -36,8 +38,6 @@ class Gateway extends AbstractGateway {
 		return [
 			'v_merchant_id' => '',
 			'demo'          => '',
-			'notify_url'    => '',
-			'success_url'   => '',
 		];
 	}
 
@@ -79,38 +79,6 @@ class Gateway extends AbstractGateway {
 		} else {
 			return $this->setParameter('v_merchant_id', $value);
 		}
-	}
-
-	/**
-	 * @return mixed
-	 */
-	public function getNotifyUrl() {
-		return $this->getParameter('notify_url');
-	}
-
-	/**
-	 * @param $value
-	 *
-	 * @return Gateway
-	 */
-	public function setNotifyUrl($value) {
-		return $this->setParameter('notify_url', $value);
-	}
-
-	/**
-	 * @return mixed
-	 */
-	public function getSuccessUrl() {
-		return $this->getParameter('success_url');
-	}
-
-	/**
-	 * @param $value
-	 *
-	 * @return Gateway
-	 */
-	public function setSuccessUrl($value) {
-		return $this->setParameter('success_url', $value);
 	}
 
 	/**

@@ -1,6 +1,6 @@
 <?php
 
-namespace Omnipay\Voguepay\Message;
+namespace Omnipay\Voguepay\Message\Gateway;
 
 use Omnipay\Common\Message\AbstractResponse;
 
@@ -25,6 +25,9 @@ class TransactionResponse extends AbstractResponse {
 		return false;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	public function getTransactionId() {
 		if (isset($this->data['transaction_id'])) {
 			return $this->data['transaction_id'];
@@ -32,6 +35,9 @@ class TransactionResponse extends AbstractResponse {
 		return false;
 	}
 
+	/**
+	 * @return bool
+	 */
 	public function getEmail() {
 		if (isset($this->data['email'])) {
 			return $this->data['email'];
@@ -39,6 +45,9 @@ class TransactionResponse extends AbstractResponse {
 		return false;
 	}
 
+	/**
+	 * @return bool
+	 */
 	public function getTotal() {
 		if (isset($this->data['total'])) {
 			return $this->data['total'];
@@ -46,6 +55,9 @@ class TransactionResponse extends AbstractResponse {
 		return false;
 	}
 
+	/**
+	 * @return bool
+	 */
 	public function getTotalPaidByBuyer() {
 		if (isset($this->data['total_paid_by_buyer'])) {
 			return $this->data['total_paid_by_buyer'];
@@ -53,6 +65,9 @@ class TransactionResponse extends AbstractResponse {
 		return false;
 	}
 
+	/**
+	 * @return bool
+	 */
 	public function getTotalCreditedToMerchant() {
 		if (isset($this->data['total_credited_to_merchant'])) {
 			return $this->data['total_credited_to_merchant'];
@@ -60,6 +75,9 @@ class TransactionResponse extends AbstractResponse {
 		return false;
 	}
 
+	/**
+	 * @return bool
+	 */
 	public function getExtraChargesByMerchant() {
 		if (isset($this->data['extra_charges_by_merchant'])) {
 			return $this->data['extra_charges_by_merchant'];
@@ -67,6 +85,9 @@ class TransactionResponse extends AbstractResponse {
 		return false;
 	}
 
+	/**
+	 * @return bool
+	 */
 	public function getMerchantRef() {
 		if (isset($this->data['merchant_ref'])) {
 			return $this->data['merchant_ref'];
@@ -74,6 +95,9 @@ class TransactionResponse extends AbstractResponse {
 		return false;
 	}
 
+	/**
+	 * @return bool
+	 */
 	public function getMemo() {
 		if (isset($this->data['memo'])) {
 			return $this->data['memo'];
@@ -81,6 +105,9 @@ class TransactionResponse extends AbstractResponse {
 		return false;
 	}
 
+	/**
+	 * @return bool
+	 */
 	public function getStatus() {
 		if (isset($this->data['status'])) {
 			return $this->data['status'];
@@ -88,6 +115,9 @@ class TransactionResponse extends AbstractResponse {
 		return false;
 	}
 
+	/**
+	 * @return bool
+	 */
 	public function getDate() {
 		if (isset($this->data['date'])) {
 			return $this->data['date'];
@@ -95,6 +125,9 @@ class TransactionResponse extends AbstractResponse {
 		return false;
 	}
 
+	/**
+	 * @return bool
+	 */
 	public function getReferrer() {
 		if (isset($this->data['referrer'])) {
 			return $this->data['referrer'];
@@ -102,6 +135,9 @@ class TransactionResponse extends AbstractResponse {
 		return false;
 	}
 
+	/**
+	 * @return bool
+	 */
 	public function getFundMaturity() {
 		if (isset($this->data['fund_maturity'])) {
 			return $this->data['fund_maturity'];
@@ -109,6 +145,9 @@ class TransactionResponse extends AbstractResponse {
 		return false;
 	}
 
+	/**
+	 * @return bool
+	 */
 	public function getCur() {
 		if (isset($this->data['cur'])) {
 			return $this->data['cur'];

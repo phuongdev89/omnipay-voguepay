@@ -8,11 +8,10 @@
  * @time    4:24 PM
  */
 
-namespace Omnipay\Voguepay\Message;
+namespace Omnipay\Voguepay\Message\Gateway;
 
 use GuzzleHttp\Exception\BadResponseException;
 use Omnipay\Common\Exception\InvalidRequestException;
-use Omnipay\Common\Message\ResponseInterface;
 
 class PayUrlRequest extends AbstractRequest {
 
@@ -26,7 +25,7 @@ class PayUrlRequest extends AbstractRequest {
 	/**
 	 * @param $value
 	 *
-	 * @return AbstractRequest
+	 * @return PayUrlRequest
 	 */
 	public function setFailUrl($value) {
 		return $this->setParameter('fail_url', $value);
@@ -42,7 +41,7 @@ class PayUrlRequest extends AbstractRequest {
 	/**
 	 * @param $value
 	 *
-	 * @return AbstractRequest
+	 * @return PayUrlRequest
 	 */
 	public function setMemo($value) {
 		return $this->setParameter('memo', $value);
@@ -58,7 +57,7 @@ class PayUrlRequest extends AbstractRequest {
 	/**
 	 * @param $value
 	 *
-	 * @return AbstractRequest
+	 * @return PayUrlRequest
 	 */
 	public function setDeveloperCode($value) {
 		return $this->setParameter('developer_code', $value);
@@ -74,7 +73,7 @@ class PayUrlRequest extends AbstractRequest {
 	/**
 	 * @param $value
 	 *
-	 * @return AbstractRequest
+	 * @return PayUrlRequest
 	 */
 	public function setTotal($value) {
 		return $this->setParameter('total', $value);
@@ -90,7 +89,7 @@ class PayUrlRequest extends AbstractRequest {
 	/**
 	 * @param $value
 	 *
-	 * @return AbstractRequest
+	 * @return PayUrlRequest
 	 */
 	public function setMerchantRef($value) {
 		return $this->setParameter('merchant_ref', $value);
@@ -146,7 +145,7 @@ class PayUrlRequest extends AbstractRequest {
 	 *
 	 * @param mixed $data The data to send
 	 *
-	 * @return ResponseInterface
+	 * @return PayUrlResponse
 	 */
 	public function sendData($data) {
 		try {

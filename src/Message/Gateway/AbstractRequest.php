@@ -1,6 +1,6 @@
 <?php
 
-namespace Omnipay\Voguepay\Message;
+namespace Omnipay\Voguepay\Message\Gateway;
 
 use Omnipay\Common\Exception\InvalidRequestException;
 use Omnipay\Common\Message\AbstractRequest as BaseAbstractRequest;
@@ -91,9 +91,14 @@ abstract class AbstractRequest extends BaseAbstractRequest {
 	}
 
 	/**
-	 * {@inheritDoc}
+	 * @param string|array $attributes
+	 *
+	 * @throws InvalidRequestException
 	 */
 	public function validate($attributes = []) {
+		if (!is_array($attributes)) {
+			$attributes = [$attributes];
+		}
 		foreach ($attributes as $attr) {
 			$value = $this->parameters->get($attr);
 			if (!isset($value)) {
