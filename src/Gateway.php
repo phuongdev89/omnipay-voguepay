@@ -5,21 +5,9 @@ namespace Omnipay\Voguepay;
 use Omnipay\Common\AbstractGateway;
 use Omnipay\Common\Message\AbstractRequest;
 use Omnipay\Common\Message\RequestInterface;
-use Omnipay\Voguepay\Message\Gateway\PayUrlRequest;
+use Omnipay\Voguepay\Message\Gateway\PurchaseRequest;
 use Omnipay\Voguepay\Message\Gateway\TransactionRequest;
 
-/**
- * @method RequestInterface authorize(array $options = [])
- * @method RequestInterface completeAuthorize(array $options = [])
- * @method RequestInterface capture(array $options = [])
- * @method RequestInterface purchase(array $options = [])
- * @method RequestInterface completePurchase(array $options = [])
- * @method RequestInterface refund(array $options = [])
- * @method RequestInterface void(array $options = [])
- * @method RequestInterface createCard(array $options = [])
- * @method RequestInterface updateCard(array $options = [])
- * @method RequestInterface deleteCard(array $options = [])
- */
 class Gateway extends AbstractGateway {
 
 	const NAME = 'Voguepay';
@@ -86,8 +74,8 @@ class Gateway extends AbstractGateway {
 	 *
 	 * @return AbstractRequest|PayUrlRequest
 	 */
-	public function payUrl($parameters = []) {
-		return $this->createRequest(PayUrlRequest::class, $parameters);
+	public function purchase($parameters = []) {
+		return $this->createRequest(PurchaseRequest::class, $parameters);
 	}
 
 	/**

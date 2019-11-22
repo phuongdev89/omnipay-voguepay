@@ -13,7 +13,7 @@ namespace Omnipay\Voguepay\Message\Gateway;
 use GuzzleHttp\Exception\BadResponseException;
 use Omnipay\Common\Exception\InvalidRequestException;
 
-class PayUrlRequest extends AbstractRequest {
+class PurchaseRequest extends AbstractRequest {
 
 	/**
 	 * @return mixed

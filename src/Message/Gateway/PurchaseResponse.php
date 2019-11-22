@@ -12,7 +12,7 @@ namespace Omnipay\Voguepay\Message\Gateway;
 
 use Omnipay\Common\Message\AbstractResponse;
 
-class PayUrlResponse extends AbstractResponse {
+class PurchaseResponse extends AbstractResponse {
 
 	/**
 	 * Is the response successful?
@@ -29,7 +29,7 @@ class PayUrlResponse extends AbstractResponse {
 	 * @return boolean
 	 */
 	public function isRedirect() {
-		return false;
+		return true;
 	}
 
 	/**
