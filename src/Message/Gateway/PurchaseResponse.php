@@ -24,6 +24,13 @@ class PurchaseResponse extends AbstractResponse {
 	}
 
 	/**
+	 * @return mixed|string
+	 */
+	public function getRedirectUrl() {
+		return $this->data['pay_url'];
+	}
+
+	/**
 	 * Does the response require a redirect?
 	 *
 	 * @return boolean
@@ -41,6 +48,9 @@ class PurchaseResponse extends AbstractResponse {
 		return $this->data;
 	}
 
+	/**
+	 * @return mixed
+	 */
 	public function getPayUrl() {
 		return $this->data['pay_url'];
 	}

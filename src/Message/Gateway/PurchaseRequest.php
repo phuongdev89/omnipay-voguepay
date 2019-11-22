@@ -154,6 +154,6 @@ class PurchaseRequest extends AbstractRequest {
 			$response = $e->getResponse();
 		}
 		$result = ['pay_url' => $response->getBody()->getContents()];
-		return new PayUrlResponse($this, $result);
+		return new PurchaseResponse($this, $result);
 	}
 }
