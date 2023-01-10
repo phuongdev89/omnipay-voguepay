@@ -1,13 +1,13 @@
 {
-    "name": "navatech/omnipay-voguepay",
+    "name": "phuongdev89/omnipay-voguepay",
     "description": "Omnipay for Voguepay",
     "type": "library",
     "keywords": ["omnipay","voguepay"],
     "license": "MIT",
     "authors": [
         {
-            "name": "Le Phuong",
-            "email": "phuong17889@gmail.com"
+            "name": "Phuong Dev",
+            "email": "phuongdev89@gmail.com"
         }
     ],
     "require": {
